@@ -1,0 +1,88 @@
+﻿@model stackexchangeTask.Models.RootObject
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<br>
+<button value="Refresh Page" onClick="window.location.reload()"> Refresh </button>
+
+<table id="Questions">
+
+
+    
+    <tr>
+        <th>NUMBER</th>
+        <th id="hhh">Questions</th>
+    </tr>
+
+
+    @{int i = 0;}
+    @foreach (var item in Model.items)
+    {
+        <tr>
+            <td>
+               @{i++; }
+                <label class="text-center" >@i</label>
+            </td>
+            <td>
+                <a href=@item.link class=" btn btn-block btn-default" target="_blank" id="ques">@item.title</a>
+
+            </td>
+
+
+        </tr>
+    }
+
+
+
+</table>
+
+
+
+
+
+
+<style>
+    label {
+        text-align: center;
+        padding: 8px;
+        padding-top: 16px;
+        padding-bottom: 12px;
+        margin-top: 10px;
+    }
+
+    button {
+        margin-bottom: 10px;
+    }
+
+    #Questions {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+
+
+
+    #ques {
+        padding: 8px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        margin-top: 10px;
+    }
+
+    #Questions th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>
+
+
